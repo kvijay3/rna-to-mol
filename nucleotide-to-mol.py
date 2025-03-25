@@ -5,7 +5,7 @@ def smiles_to_3d(smiles, output_file, output_format):
     try:
         mol = pybel.readstring("smi", smiles)
         mol.addh()  # Add hydrogen atoms
-        mol.make3D(forcefield="mmff94", steps=200)
+        mol.make3D(forcefield="mmff94", steps=200) # change the forcefield based on RNA
         
         # Ensure output format is correctly passed
         mol.write(output_format, output_file, overwrite=True)
